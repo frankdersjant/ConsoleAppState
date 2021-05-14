@@ -5,19 +5,21 @@ namespace ConsoleAppState
 {
     public class CatContext
     {
-        public CatState CurrentState;
+        //CatContext is actually the cat!!
+
+        public AbstractCatState CurrentState;
         private int HappyWith;
 
         public CatContext(Type InitialState, int HappyFood)
         {
-            if (InitialState == typeof(Sleeping))
-                this.CurrentState = new Sleeping(this);
+            if (InitialState == typeof(SleepingState))
+                this.CurrentState = new SleepingState(this);
 
-            if (InitialState == typeof(Eating))
-                this.CurrentState = new Sleeping(this);
+            if (InitialState == typeof(EatingState))
+                this.CurrentState = new SleepingState(this);
 
-            if (InitialState == typeof(Contemplating))
-                this.CurrentState = new Contemplating(this);
+            if (InitialState == typeof(ContemplatingState))
+                this.CurrentState = new ContemplatingState(this);
 
             HappyWith = HappyFood;
         }
@@ -25,20 +27,19 @@ namespace ConsoleAppState
         public void ReceiveFood(int amount)
         {
             CurrentState.GetsFed(amount, HappyWith);
-            Console.WriteLine("I am in ", CurrentState.GetType().Name);
+            Console.WriteLine("I am in {0} ", CurrentState.GetType().Name);
         }
 
         public void FinishEating()
         {
             CurrentState.BowlEmpty();
-            Console.WriteLine("I am in ", CurrentState.GetType().Name);
+            Console.WriteLine("I am in {0} ", CurrentState.GetType().Name);
         }
 
         public void CompletePlan()
         {
             CurrentState.WorldBeware();
-            Console.WriteLine("I am in ", CurrentState.GetType().Name);
+            Console.WriteLine("I am in {0} ", CurrentState.GetType().Name);
         }
-        
     }
 }

@@ -2,15 +2,15 @@
 
 namespace ConsoleAppState.States
 {
-    public class Sleeping : CatState
+    public class SleepingState : AbstractCatState
     {
-        public Sleeping(CatContext Handle) : base(Handle)
+        public SleepingState(CatContext Handle) : base(Handle)
         {}
 
         public override void GetsFed(int amount, int HappyWith)
         {
             Console.WriteLine("Hmm lekker!");
-            this.Handle.CurrentState = new Eating(this.Handle, amount, HappyWith);
+            this.Handle.CurrentState = new EatingState(this.Handle, amount, HappyWith);
         }
     }
 }
