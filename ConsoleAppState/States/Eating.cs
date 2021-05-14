@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleAppState.States
 {
@@ -11,7 +7,7 @@ namespace ConsoleAppState.States
         private int Amount;
         private int HappyWith;
 
-        public Eating(CatContext handle, int amount, int happyWith):base(handle)
+        public Eating(CatContext Handle, int amount, int happyWith):base(Handle)
         {
             Amount = amount;
             HappyWith = happyWith;
@@ -19,7 +15,9 @@ namespace ConsoleAppState.States
 
         public override void BowlEmpty()
         {
-            throw new NotImplementedException();
+            if (Amount >= HappyWith)
+                Console.WriteLine("Thats was great");
+            this.Handle.CurrentState = new Sleeping(this.Handle);
         }
 
         public override void Comtemplating()

@@ -15,8 +15,8 @@ namespace ConsoleAppState.States
         }
 
         public abstract void GetsFed(int amount, int HappyWith);
-        public abstract void BowlEmpty();
-        public abstract void Comtemplating();
+        public virtual void BowlEmpty() { }
+        public virtual void Comtemplating(){ }
 
     }
 }

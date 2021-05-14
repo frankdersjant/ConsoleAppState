@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppState.States;
+using System;
 
 namespace ConsoleAppState
 {
@@ -14,6 +15,9 @@ namespace ConsoleAppState
             //Object maintains its own internal state
             //different states are represented by different classes vs strategy - algorthym is also a class
             //State changes at runtime
+
+            CatContext catContext = new CatContext(typeof(Sleeping), 100);
+            catContext.ReceiveFood(110);
         }
     }
 }

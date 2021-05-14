@@ -4,7 +4,7 @@ namespace ConsoleAppState.States
 {
     public class Sleeping : CatState
     {
-        public Sleeping(CatContext handle) : base(handle)
+        public Sleeping(CatContext Handle) : base(Handle)
         {
 
         }
