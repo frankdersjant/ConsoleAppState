@@ -14,10 +14,6 @@ namespace ConsoleAppState.States
             throw new NotImplementedException();
         }
 
-        public override void Comtemplating()
-        {
-            throw new NotImplementedException();
-        }
 
         public override void GetsFed(int amount, int HappyWith)
         {

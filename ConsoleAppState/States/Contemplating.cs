@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleAppState.States
 {
@@ -14,7 +10,8 @@ namespace ConsoleAppState.States
         }
         public override void GetsFed(int amount, int HappyWith)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("I am gonno dominate the after my nap");
+            this.Handle.CurrentState = new Sleeping(this.Handle);
         }
     }
 }

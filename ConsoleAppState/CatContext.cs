@@ -36,8 +36,8 @@ namespace ConsoleAppState
 
         public void CompletePlan()
         {
-            //CurrentState.WorldBeware
-            //Console.WriteLine("I am in ", CurrentState.GetType().Name);
+            CurrentState.WorldBeware();
+            Console.WriteLine("I am in ", CurrentState.GetType().Name);
         }
         
     }

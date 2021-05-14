@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleAppState.States
+﻿namespace ConsoleAppState.States
 {
     public abstract class CatState
     {
@@ -14,9 +8,12 @@ namespace ConsoleAppState.States
             Handle = handle;
         }
 
+        //abstract - must implement in derived class
         public abstract void GetsFed(int amount, int HappyWith);
+        
+        //virtual - dummy implementation
         public virtual void BowlEmpty() { }
-        public virtual void Comtemplating(){ }
+        public virtual void WorldBeware() { }
 
     }
 }

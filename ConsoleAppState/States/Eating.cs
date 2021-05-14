@@ -20,11 +20,6 @@ namespace ConsoleAppState.States
             this.Handle.CurrentState = new Sleeping(this.Handle);
         }
 
-        public override void Comtemplating()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void GetsFed(int amount, int HappyWith)
         {
             throw new NotImplementedException();
